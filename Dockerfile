@@ -3,6 +3,7 @@ MAINTAINER Markku Virtanen <cahva@po-rno.fi>
 
 ADD install.sh install.sh
 ADD replaceauth.sh replaceauth.sh
+RUN docker-php-ext-install mbstring
 RUN chmod +x install.sh && chmod +x replaceauth.sh && sleep 1 && ./install.sh && rm install.sh
 
 EXPOSE 2080
